@@ -1,29 +1,142 @@
-{
-    "name": "炭素",
-    "recipes": [
-        {
-            "ingredients": [
-                {
-                    "item": "酸素",
+[
+    {
+        "name": "炭素",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "酸素",
+                        "amount": 2
+                    }
+                ],
+                "result": {
+                    "amount": 5
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "濃縮炭素",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "濃縮炭素",
+                        "amount": 1
+                    },
+                    {
+                        "item": "酸素",
+                        "amount": 2
+                    }
+                ],
+                "result": {
+                    "amount": 6
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "酸素",
+        "recipes": []
+    },
+
+    {
+        "name": "フェライト塵",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "純粋フェライト",
+                        "amount": 1
+                    },
+                    {
+                        "item": "酸素",
+                        "amount": 1
+                    }
+                ],
+                "result": {
                     "amount": 2
-                }
-            ],
-            "result": {
-                "amount": 5
+                },
+                "machine": "中型・大型精製機"
             },
-            "machine": "中型・大型精製機"
-        },
-        {
-            "ingredients": [
-                {
-                    "item": "濃縮炭素",
-                    "amount": 1
-                }
-            ],
-            "result": {
-                "amount": 2
-            },
-            "machine": "携帯・中型・大型精製機"
-        }
-    ]
-}
+            {
+                "ingredients": [
+                    {
+                        "item": "錆びた金属",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "携帯・中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "純粋フェライト",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "磁化フェライト",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "携帯・中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "磁化フェライト",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "純粋フェライト",
+                        "amount": 1
+                    },
+                    {
+                        "item": "濃縮炭素",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 3
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "有色金属",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "銅",
+                        "amount": 1
+                    },
+                    {
+                        "item": "有色金属",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    }
+]
