@@ -1,31 +1,29 @@
-[
-    {
-        "name": "炭素",
-        "recipes": [
-            {
-                "ingredients": [
-                    {
-                        "item": "酸素",
-                        "amount": 1
-                    }
-                ],
-                "result": {
+{
+    "name": "炭素",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "酸素",
                     "amount": 2
-                },
-                "machine": "中型・大型精製機"
+                }
+            ],
+            "result": {
+                "amount": 5
             },
-            {
-                "ingredients": [
-                    {
-                        "item": "濃縮炭素",
-                        "amount": 1
-                    }
-                ],
-                "result": {
-                    "amount": 2
-                },
-                "machine": "携帯・中型・大型精製機"
-            }
-        ]
-    }
-]
+            "machine": "中型・大型精製機"
+        },
+        {
+            "ingredients": [
+                {
+                    "item": "濃縮炭素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "携帯・中型・大型精製機"
+        }
+    ]
+}
