@@ -140,3 +140,93 @@
         ]
     }
 ]
+
+[
+    {
+        "name": "銅",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "銅",
+                        "amount": 1
+                    },
+                    {
+                        "item": "有色金属",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "カドミウム",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "カドミウム",
+                        "amount": 1
+                    },
+                    {
+                        "item": "有色金属",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "エメリル",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "エメリル",
+                        "amount": 1
+                    },
+                    {
+                        "item": "有色金属",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    },
+
+    {
+        "name": "インジウム",
+        "recipes": [
+            {
+                "ingredients": [
+                    {
+                        "item": "インジウム",
+                        "amount": 1
+                    },
+                    {
+                        "item": "有色金属",
+                        "amount": 1
+                    }
+                ],
+                "result": {
+                    "amount": 2
+                },
+                "machine": "中型・大型精製機"
+            }
+        ]
+    }
+]
