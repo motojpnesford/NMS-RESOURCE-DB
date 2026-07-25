@@ -1,0 +1,84 @@
+/* 全体 */
+
+body{
+    margin:0;
+    padding:0;
+    background:#0b0b0b;
+    color:#ffffff;
+    font-family:'Orbitron',sans-serif;
+}
+
+/* コンテナ */
+
+#container{
+    width:90%;
+    max-width:700px;
+    margin:50px auto;
+    text-align:center;
+}
+
+/* タイトル */
+
+h1{
+    color:#ff4040;
+    font-size:42px;
+    letter-spacing:3px;
+    margin-bottom:40px;
+}
+
+/* 検索エリア */
+
+#searchArea{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+/* 入力欄 */
+
+#searchInput{
+    flex:1;
+    padding:12px;
+    font-size:18px;
+    background:#181818;
+    color:white;
+    border:2px solid #ff4040;
+    border-radius:6px;
+    outline:none;
+}
+
+#searchInput::placeholder{
+    color:#888;
+}
+
+/* ボタン */
+
+#searchButton{
+    padding:12px 24px;
+    background:#ff4040;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-family:'Orbitron',sans-serif;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+#searchButton:hover{
+    background:#ff6666;
+}
+
+/* 結果表示 */
+
+#resultArea{
+    min-height:200px;
+    background:#151515;
+    border:2px solid #333;
+    border-radius:8px;
+    padding:20px;
+    text-align:left;
+    line-height:1.8;
+    font-size:18px;
+}
