@@ -138,10 +138,9 @@
                 "machine": "中型・大型精製機"
             }
         ]
-    }
-]
-},
-[
+    },
+
+    [
     {
         "name": "銅",
         "recipes": [
@@ -228,5 +227,175 @@
                 "machine": "中型・大型精製機"
             }
         ]
-    }
-]
+    },
+{
+    "name": "コバルト",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "イオン化コバルト",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "携帯・中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "イオン化コバルト",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "イオン化コバルト",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 2
+                }
+            ],
+            "result": {
+                "amount": 6
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "リン",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "リン",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "パラフィニウム",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "パラフィニウム",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "アンモニア",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "アンモニア",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "二酸化物",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "二酸化物",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "ウラン",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "ウラン",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+},
+
+{
+    "name": "黄鉄鉱",
+    "recipes": [
+        {
+            "ingredients": [
+                {
+                    "item": "黄鉄鉱",
+                    "amount": 1
+                },
+                {
+                    "item": "酸素",
+                    "amount": 1
+                }
+            ],
+            "result": {
+                "amount": 2
+            },
+            "machine": "中型・大型精製機"
+        }
+    ]
+}
