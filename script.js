@@ -1,16 +1,29 @@
 // ================================
 // NMS RESOURCE DB
-// Ver.0.1
+// Ver.0.2
 // ================================
 
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const resultArea = document.getElementById("resultArea");
 
-// 検索ボタン
+let database = [];
+
+// JSONを読み込む
+fetch("recipes.json")
+    .then(response => response.json())
+    .then(data => {
+        database = data;
+        console.log("データベース読込完了");
+    })
+    .catch(error => {
+        console.error("JSON読込エラー", error);
+    });
+
+// ボタンクリック
 searchButton.addEventListener("click", searchResource);
 
-// Enterキーでも検索
+// Enterキー
 searchInput.addEventListener("keydown", function(event){
 
     if(event.key === "Enter"){
@@ -19,23 +32,50 @@ searchInput.addEventListener("keydown", function(event){
 
 });
 
-// 検索処理
+// 検索
 function searchResource(){
 
     const keyword = searchInput.value.trim();
 
     if(keyword === ""){
-
         resultArea.innerHTML = "資源名を入力してください。";
         return;
-
     }
 
-    // Ver.0.1ではまだ検索機能は未実装
-    resultArea.innerHTML =
-    `
-    <h2>${keyword}</h2>
-    <p>検索機能は次回実装します。</p>
-    `;
+    const item = database.find(data => data.name === keyword);
+
+    if(!item){
+        resultArea.innerHTML = "見つかりませんでした。";
+        return;
+    }
+
+    showResult(item);
+
+}
+
+// 結果表示
+function showResult(item){
+
+    let html = `<h2>${item.name}</h2>`;
+
+    item.recipes.forEach((recipe, index) => {
+
+        html += `<h3>増やし方 ${index + 1}</h3>`;
+
+        recipe.ingredients.forEach(material => {
+
+            html += `${material.item} × ${material.amount}<br>`;
+
+        });
+
+        html += "↓<br>";
+
+        html += `${item.name} × ${recipe.result.amount}<br>`;
+
+        html += `<small>${recipe.machine}</small><br><br>`;
+
+    });
+
+    resultArea.innerHTML = html;
 
 }
