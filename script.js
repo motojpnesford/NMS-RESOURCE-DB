@@ -83,7 +83,7 @@ function showResult(item){
 
     // メッセージは必ず表示
     html += `<hr>`;
-    html += `<p>${item.message}</p>`;
+    html += `<p>${item.message.replace(/\n/g, "<br>")}</p>`;
 
     resultArea.innerHTML = html;
 
