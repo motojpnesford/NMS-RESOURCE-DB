@@ -1,21 +1,8 @@
 [
     {
         "name": "炭素",
-        "recipes": [
-            {
-                "ingredients": [
-                    {
-                        "item": "酸素",
-                        "amount": 2
-                    }
-                ],
-                "result": {
-                    "amount": 5
-                },
-                "machine": "中型・大型精製機"
-            }
-        ],
-    "message": "酸素が余ったら炭素はこの方法がおすすめ。"
+       "recipes": [],
+    "message": "増殖不可\n変換・濃縮炭素1→炭素2"
     },
 
     {
@@ -38,66 +25,28 @@
                 "machine": "中型・大型精製機"
             }
          ],
-    "message": "炭素2→濃縮炭素1"
+    "message": "変換：炭素2→濃縮炭素1"
     },
 
     {
         "name": "酸素",
         "recipes": [],
-    "message": "この資源は精製による増殖はできません"
+    "message": "増殖不可\n採取・有害植物から採取"
     },
 
     {
         "name": "フェライト塵",
-        "recipes": [
-            {
-                "ingredients": [
-                    {
-                        "item": "純粋フェライト",
-                        "amount": 1
-                    },
-                    {
-                        "item": "酸素",
-                        "amount": 1
-                    }
-                ],
-                "result": {
-                    "amount": 2
-                },
-                "machine": "中型・大型精製機"
-            },
-            {
-                "ingredients": [
-                    {
-                        "item": "錆びた金属",
-                        "amount": 1
-                    }
-                ],
-                "result": {
-                    "amount": 2
-                },
-                "machine": "携帯・中型・大型精製機"
-            }
-        ]
+        "recipes": [],
+    "message": "増殖不可\n変換・錆びた金属1→フェライト塵2"
     },
+    
 
     {
-        "name": "純粋フェライト",
-        "recipes": [
-            {
-                "ingredients": [
-                    {
-                        "item": "磁化フェライト",
-                        "amount": 1
-                    }
-                ],
-                "result": {
-                    "amount": 2
-                },
-                "machine": "携帯・中型・大型精製機"
-            }
-        ]
+        "name": "ピュアフェライト",
+        "recipes": [],
+    "message": "増殖不可\n採取・フェライト塵1:濃縮酸素1→磁化フェライト3\n磁化フェライト1→ピュアフェライト2"
     },
+
 
     {
         "name": "磁化フェライト",
