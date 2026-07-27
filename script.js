@@ -58,23 +58,32 @@ function showResult(item){
 
     let html = `<h2>${item.name}</h2>`;
 
-    item.recipes.forEach((recipe, index) => {
+    // レシピがある場合だけ表示
+    if(item.recipes.length > 0){
 
-        html += `<h3>増やし方 ${index + 1}</h3>`;
+        item.recipes.forEach((recipe, index) => {
 
-        recipe.ingredients.forEach(material => {
+            html += `<h3>増やし方 ${index + 1}</h3>`;
 
-            html += `${material.item} × ${material.amount}<br>`;
+            recipe.ingredients.forEach(material => {
+
+                html += `${material.item} × ${material.amount}<br>`;
+
+            });
+
+            html += "↓<br>";
+
+            html += `${item.name} × ${recipe.result.amount}<br>`;
+
+            html += `<small>${recipe.machine}</small><br><br>`;
 
         });
 
-        html += "↓<br>";
+    }
 
-        html += `${item.name} × ${recipe.result.amount}<br>`;
-
-        html += `<small>${recipe.machine}</small><br><br>`;
-
-    });
+    // メッセージは必ず表示
+    html += `<hr>`;
+    html += `<p>${item.message}</p>`;
 
     resultArea.innerHTML = html;
 
