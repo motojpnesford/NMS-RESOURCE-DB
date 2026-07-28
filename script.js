@@ -187,3 +187,23 @@ function escapeHtml(text){
         .replace(/>/g,"&gt;");
 
 }
+
+// --------------------
+// セクション作成
+// --------------------
+
+function createSection(title, body){
+
+    if(body === ""){
+
+        return "";
+
+    }
+
+    return `
+        <hr>
+        <h3>${title}</h3>
+        ${body}
+    `;
+
+}
