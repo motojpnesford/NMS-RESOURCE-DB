@@ -108,13 +108,34 @@ function showResult(item){
 // ガイド
 // --------------------
 
+// --------------------
+// おすすめ手順
+// --------------------
+
 function showGuide(item){
 
-    return "";
+    if(!item.guide || item.guide.length === 0){
+
+        return "";
+
+    }
+
+    let body = "";
+
+    item.guide.forEach(step => {
+
+        body += `
+            <p>
+                <strong>${step.step}. ${escapeHtml(step.title)}</strong><br>
+                ${escapeHtml(step.text)}
+            </p>
+        `;
+
+    });
+
+    return createSection("おすすめ増殖手順", body);
 
 }
-
-
 // --------------------
 // レシピ
 // --------------------
