@@ -140,12 +140,50 @@ function showGuide(item){
 // レシピ
 // --------------------
 
+// --------------------
+// 精製レシピ
+// --------------------
+
 function showRecipes(item){
 
-    return "";
+    if(!item.recipes || item.recipes.length === 0){
+
+        return "";
+
+    }
+
+    let body = "";
+
+    item.recipes.forEach(recipe => {
+
+        // 材料
+        recipe.ingredients.forEach(material => {
+
+            body += `
+                ${escapeHtml(material.item)} × ${material.amount}<br>
+            `;
+
+        });
+
+        // 精製機
+        body += `
+            <br>
+            ↓<br>
+            <small>${escapeHtml(recipe.machine)}</small>
+            <br><br>
+        `;
+
+        // 完成品
+        body += `
+            ${escapeHtml(recipe.result.item)} × ${recipe.result.amount}
+            <br><br>
+        `;
+
+    });
+
+    return createSection("精製レシピ", body);
 
 }
-
 
 // --------------------
 // 変換
