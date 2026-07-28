@@ -183,3 +183,41 @@ No Man's Sky 日本語版対応の資源データベース。
 ---
 
 現在もゲーム内でレシピ・名称を確認しながら更新中。
+
+# CHANGELOG
+
+## Ver.1.0 開発中
+
+### データ構造変更
+
+- message中心の設計を廃止
+- guide を追加
+- recipes を追加
+- convert を追加
+- collect を追加
+- use を追加
+- note を追加
+
+### JavaScript
+
+追加
+
+- createSection()
+
+実装
+
+- showGuide()
+- showRecipes()
+- showConvert()
+- showCollect()
+- showUse()
+- showNote()
+
+### 設計変更
+
+JSONはデータのみ管理。
+
+JavaScriptが表示レイアウトを担当する構成へ変更。
+
+今後の機能追加時にJSONを書き換える必要がない設計へ移行。
+
