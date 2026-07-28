@@ -136,9 +136,7 @@ function showGuide(item){
     return createSection("おすすめ増殖手順", body);
 
 }
-// --------------------
-// レシピ
-// --------------------
+
 
 // --------------------
 // 精製レシピ
@@ -185,9 +183,6 @@ function showRecipes(item){
 
 }
 
-// --------------------
-// 変換
-// --------------------
 
 // --------------------
 // 変換
@@ -214,16 +209,33 @@ function showConvert(item){
     return createSection("変換", body);
 
 }
+
+
 // --------------------
 // 採取
 // --------------------
 
 function showCollect(item){
 
-    return "";
+    if(!item.collect || item.collect.length === 0){
+
+        return "";
+
+    }
+
+    let body = "";
+
+    item.collect.forEach(text => {
+
+        body += `
+            ${escapeHtml(text)}<br>
+        `;
+
+    });
+
+    return createSection("採取", body);
 
 }
-
 
 // --------------------
 // 用途
@@ -231,10 +243,25 @@ function showCollect(item){
 
 function showUse(item){
 
-    return "";
+    if(!item.use || item.use.length === 0){
+
+        return "";
+
+    }
+
+    let body = "";
+
+    item.use.forEach(text => {
+
+        body += `
+            ${escapeHtml(text)}<br>
+        `;
+
+    });
+
+    return createSection("用途", body);
 
 }
-
 
 // --------------------
 // 補足
@@ -242,10 +269,25 @@ function showUse(item){
 
 function showNote(item){
 
-    return "";
+    if(!item.note || item.note.length === 0){
+
+        return "";
+
+    }
+
+    let body = "";
+
+    item.note.forEach(text => {
+
+        body += `
+            ${escapeHtml(text)}<br>
+        `;
+
+    });
+
+    return createSection("補足", body);
 
 }
-
 // --------------------
 // HTMLエスケープ
 // --------------------
