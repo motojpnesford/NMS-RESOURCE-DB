@@ -189,13 +189,31 @@ function showRecipes(item){
 // 変換
 // --------------------
 
+// --------------------
+// 変換
+// --------------------
+
 function showConvert(item){
 
-    return "";
+    if(!item.convert || item.convert.length === 0){
+
+        return "";
+
+    }
+
+    let body = "";
+
+    item.convert.forEach(text => {
+
+        body += `
+            ${escapeHtml(text)}<br>
+        `;
+
+    });
+
+    return createSection("変換", body);
 
 }
-
-
 // --------------------
 // 採取
 // --------------------
