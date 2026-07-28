@@ -1,6 +1,7 @@
 // ================================
 // NMS RESOURCE DB
-// Ver.0.2
+// Ver.1.0
+// script.js
 // ================================
 
 const searchInput = document.getElementById("searchInput");
@@ -9,82 +10,180 @@ const resultArea = document.getElementById("resultArea");
 
 let database = [];
 
-// JSONを読み込む
+// --------------------
+// JSON読込
+// --------------------
+
 fetch("recipes.json")
     .then(response => response.json())
     .then(data => {
+
         database = data;
+
         console.log("データベース読込完了");
+
     })
     .catch(error => {
+
         console.error("JSON読込エラー", error);
+
     });
 
-// ボタンクリック
+
+// --------------------
+// イベント
+// --------------------
+
 searchButton.addEventListener("click", searchResource);
 
-// Enterキー
 searchInput.addEventListener("keydown", function(event){
 
     if(event.key === "Enter"){
+
         searchResource();
+
     }
 
 });
 
+
+// --------------------
 // 検索
+// --------------------
+
 function searchResource(){
 
     const keyword = searchInput.value.trim();
 
     if(keyword === ""){
+
         resultArea.innerHTML = "資源名を入力してください。";
+
         return;
+
     }
 
     const item = database.find(data => data.name === keyword);
 
     if(!item){
+
         resultArea.innerHTML = "見つかりませんでした。";
+
         return;
+
     }
 
     showResult(item);
 
 }
 
-// 結果表示
+
+// --------------------
+// 表示
+// --------------------
+
 function showResult(item){
 
-    let html = `<h2>${item.name}</h2>`;
+    let html = "";
 
-    // レシピがある場合だけ表示
-    if(item.recipes.length > 0){
+    html += `<h2>${escapeHtml(item.name)}</h2>`;
 
-        item.recipes.forEach((recipe, index) => {
+    html += showGuide(item);
 
-            html += `<h3>増やし方 ${index + 1}</h3>`;
+    html += showRecipes(item);
 
-            recipe.ingredients.forEach(material => {
+    html += showConvert(item);
 
-                html += `${material.item} × ${material.amount}<br>`;
+    html += showCollect(item);
 
-            });
+    html += showUse(item);
 
-            html += "↓<br>";
+    html += showNote(item);
 
-            html += `${item.name} × ${recipe.result.amount}<br>`;
+    resultArea.innerHTML = html;
 
-            html += `<small>${recipe.machine}</small><br><br>`;
+}
 
-        });
+// --------------------
+// ガイド
+// --------------------
+
+function showGuide(item){
+
+    return "";
+
+}
+
+
+// --------------------
+// レシピ
+// --------------------
+
+function showRecipes(item){
+
+    return "";
+
+}
+
+
+// --------------------
+// 変換
+// --------------------
+
+function showConvert(item){
+
+    return "";
+
+}
+
+
+// --------------------
+// 採取
+// --------------------
+
+function showCollect(item){
+
+    return "";
+
+}
+
+
+// --------------------
+// 用途
+// --------------------
+
+function showUse(item){
+
+    return "";
+
+}
+
+
+// --------------------
+// 補足
+// --------------------
+
+function showNote(item){
+
+    return "";
+
+}
+
+// --------------------
+// HTMLエスケープ
+// --------------------
+
+function escapeHtml(text){
+
+    if(text == null){
+
+        return "";
 
     }
 
-    // メッセージは必ず表示
-    html += `<hr>`;
-    html += `<p>${item.message.replace(/\n/g, "<br>")}</p>`;
-
-    resultArea.innerHTML = html;
+    return text
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;");
 
 }
