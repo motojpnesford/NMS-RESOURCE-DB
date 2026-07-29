@@ -158,6 +158,67 @@ JSONにはデータのみを記述し、
 
 などをJSONを書き換えることなく実装可能となった。
 
+## Overview
+
+# Version
+
+## Ver.1.0 Development
+
+### Data format update
+
+資源データ形式を正式フォーマットへ変更。
+
+各資源JSONは以下の項目で管理する。
+
+- name
+- category
+- guide
+- recipes
+- convert
+- collect
+- use
+- note
+
+---
+
+## Guide format
+
+おすすめ増殖手順は以下の形式で管理。
+
+```json
+{
+    "step": "①",
+    "title": "手順タイトル",
+    "text": "説明文"
+}
+
+Data registration policy
+
+今後の資源データ登録は専用ページ情報を基準にする。
+
+登録ルール：
+
+Wiki専用ページを確認
+精製レシピは可能な限り全て登録
+おすすめルートのみguideへ登録
+入手方法・用途・補足も記録
+Current registered resources
+Basic resources
+炭素
+濃縮炭素
+Development notes
+
+Ver.1.0ではデータ量増加を前提として設計。
+
+将来的に、
+
+部分一致検索
+検索候補表示
+資源名クリックによる関連検索
+精製素材ツリー表示
+
+などの機能追加を予定。
+
 ## ライセンス
 
 個人利用
