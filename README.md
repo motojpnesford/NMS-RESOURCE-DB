@@ -191,6 +191,11 @@ JSONにはデータのみを記述し、
     "title": "手順タイトル",
     "text": "説明文"
 }
+
+```
+
+---
+
 ##今後
 Data registration policy
 
