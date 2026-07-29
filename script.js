@@ -184,9 +184,7 @@ function showRecipes(item){
 function showConvert(item){
 
     if(!item.convert || item.convert.length === 0){
-
         return "";
-
     }
 
     let body = "";
@@ -194,7 +192,7 @@ function showConvert(item){
     item.convert.forEach(text => {
 
         body += `
-            ${escapeHtml(text)}<br>
+            <p>${escapeHtml(text)}</p>
         `;
 
     });
@@ -202,8 +200,6 @@ function showConvert(item){
     return createSection("変換", body);
 
 }
-
-
 // --------------------
 // 採取
 // --------------------
@@ -211,9 +207,7 @@ function showConvert(item){
 function showCollect(item){
 
     if(!item.collect || item.collect.length === 0){
-
         return "";
-
     }
 
     let body = "";
@@ -221,7 +215,7 @@ function showCollect(item){
     item.collect.forEach(text => {
 
         body += `
-            ${escapeHtml(text)}<br>
+            <p>${escapeHtml(text)}</p>
         `;
 
     });
@@ -237,9 +231,7 @@ function showCollect(item){
 function showUse(item){
 
     if(!item.use || item.use.length === 0){
-
         return "";
-
     }
 
     let body = "";
@@ -247,7 +239,7 @@ function showUse(item){
     item.use.forEach(text => {
 
         body += `
-            ${escapeHtml(text)}<br>
+            <p>${escapeHtml(text)}</p>
         `;
 
     });
@@ -263,9 +255,7 @@ function showUse(item){
 function showNote(item){
 
     if(!item.note || item.note.length === 0){
-
         return "";
-
     }
 
     let body = "";
@@ -273,7 +263,7 @@ function showNote(item){
     item.note.forEach(text => {
 
         body += `
-            ${escapeHtml(text)}<br>
+            <p>${escapeHtml(text)}</p>
         `;
 
     });
