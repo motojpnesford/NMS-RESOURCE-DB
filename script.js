@@ -278,18 +278,16 @@ function showNote(item){
 function escapeHtml(text){
 
     if(text == null){
-
         return "";
-
     }
 
-    return text
+    return String(text)
         .replace(/&/g,"&amp;")
         .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;");
-
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 }
-
 // --------------------
 // セクション作成
 // --------------------
