@@ -115,15 +115,20 @@ function showResult(item){
 function showGuide(item){
 
     if(!item.guide || item.guide.length === 0){
+
         return "";
+
     }
 
     let body = "";
 
-    item.guide.forEach(text => {
+    item.guide.forEach(step => {
 
         body += `
-            <p>${escapeHtml(text)}</p>
+            <p>
+                <strong>${escapeHtml(step.step)} ${escapeHtml(step.title)}</strong><br>
+                ${escapeHtml(step.text)}
+            </p>
         `;
 
     });
