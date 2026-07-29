@@ -191,7 +191,7 @@ JSONにはデータのみを記述し、
     "title": "手順タイトル",
     "text": "説明文"
 }
-
+##今後
 Data registration policy
 
 今後の資源データ登録は専用ページ情報を基準にする。
