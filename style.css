@@ -82,3 +82,17 @@ h1{
     line-height:1.8;
     font-size:18px;
 }
+
+.resourceLink{
+
+    color:#ff4444;
+    cursor:pointer;
+    text-decoration:underline;
+
+}
+
+.resourceLink:hover{
+
+    color:#ffffff;
+
+}
