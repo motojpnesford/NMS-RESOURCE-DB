@@ -345,5 +345,6 @@ function createResourceLink(name){
               data-name="${escapeHtml(name)}">
             ${escapeHtml(name)}
         </span>
-    `;
+     `;
 
+}
