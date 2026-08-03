@@ -46,6 +46,27 @@ searchInput.addEventListener("keydown", function(event){
 
 });
 
+// --------------------
+
+// 資源リンククリック
+
+// --------------------
+
+resultArea.addEventListener("click", function(event){
+
+    if(!event.target.classList.contains("resourceLink")){
+
+        return;
+
+    }
+
+    const name = event.target.dataset.name;
+
+    searchInput.value = name;
+
+    searchResource();
+
+});
 
 // --------------------
 // 検索
