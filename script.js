@@ -156,7 +156,7 @@ function showRecipes(item){
         recipe.ingredients.forEach(material => {
 
             body += `
-                ${escapeHtml(material.item)} × ${material.amount}<br>
+                ${createResourceLink(recipe.result.item)}× ${material.amount}<br>
             `;
 
         });
@@ -312,3 +312,17 @@ function createSection(title, body){
     `;
 
 }
+
+// --------------------
+// 資源リンク作成
+// --------------------
+
+function createResourceLink(name){
+
+    return `
+        <span class="resourceLink"
+              data-name="${escapeHtml(name)}">
+            ${escapeHtml(name)}
+        </span>
+    `;
+
