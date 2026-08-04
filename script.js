@@ -192,7 +192,7 @@ function showRecipes(item){
 
         // 完成品
         body += `
-            ${escapeHtml(recipe.result.item)} × ${recipe.result.amount}
+            ${createResourceLink(recipe.result.item)} × ${recipe.result.amount}
             <br><br>
         `;
 
