@@ -177,8 +177,8 @@ function showRecipes(item){
         recipe.ingredients.forEach(material => {
 
             body += `
-                ${createResourceLink(recipe.result.item)}× ${material.amount}<br>
-            `;
+    ${createResourceLink(material.item)} × ${material.amount}<br>
+`;
 
         });
 
