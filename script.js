@@ -240,9 +240,9 @@ function showCollect(item){
 
     item.collect.forEach(text => {
 
-        body += `
-            <p>${escapeHtml(text)}</p>
-        `;
+    body += `
+    <p>${escapeHtml(text)}</p>
+`;
 
     });
 
