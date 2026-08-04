@@ -148,7 +148,7 @@ function showGuide(item){
         body += `
             <p>
                 <strong>${escapeHtml(step.step)} ${escapeHtml(step.title)}</strong><br>
-                ${escapeHtml(step.text)}
+                ${createTextLinks(step.text)}
             </p>
         `;
 
@@ -366,13 +366,18 @@ function createAutoLink(text){
 
 }
 // --------------------
-// 変換文字列リンク化
+// 文章内リンク化
 // --------------------
 
-function createConvertLink(text){
+function createTextLinks(text){
+
+    if(text == null){
+        return "";
+    }
 
     let result = escapeHtml(text);
 
+    // 名前が長いものから処理
     const names = database
         .map(item => item.name)
         .sort((a, b) => b.length - a.length);
@@ -383,6 +388,17 @@ function createConvertLink(text){
 
         result = result.replaceAll(
             escapeHtml(name),
+            `%%${escapeHtml(name)}%%`
+        );
+
+    });
+
+    names.forEach(name => {
+
+        const link = createResourceLink(name);
+
+        result = result.replaceAll(
+            `%%${escapeHtml(name)}%%`,
             link
         );
 
