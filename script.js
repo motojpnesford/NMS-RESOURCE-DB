@@ -373,13 +373,18 @@ function createConvertLink(text){
 
     let result = escapeHtml(text);
 
-    database.forEach(item => {
+    const names = database
+        .map(item => item.name)
+        .sort((a, b) => b.length - a.length);
 
-        const name = escapeHtml(item.name);
+    names.forEach(name => {
 
-        const link = createResourceLink(item.name);
+        const link = createResourceLink(name);
 
-        result = result.replaceAll(name, link);
+        result = result.replaceAll(
+            escapeHtml(name),
+            link
+        );
 
     });
 
