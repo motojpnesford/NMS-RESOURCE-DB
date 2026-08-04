@@ -218,8 +218,8 @@ function showConvert(item){
     item.convert.forEach(text => {
 
         body += `
-            <p>${escapeHtml(text)}</p>
-        `;
+    <p>${createConvertLink(text)}</p>
+`;
 
     });
 
@@ -363,5 +363,26 @@ function createAutoLink(text){
     }
 
     return escapeHtml(text);
+
+}
+// --------------------
+// 変換文字列リンク化
+// --------------------
+
+function createConvertLink(text){
+
+    let result = escapeHtml(text);
+
+    database.forEach(item => {
+
+        const name = escapeHtml(item.name);
+
+        const link = createResourceLink(item.name);
+
+        result = result.replaceAll(name, link);
+
+    });
+
+    return result;
 
 }
