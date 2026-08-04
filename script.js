@@ -265,8 +265,8 @@ function showUse(item){
     item.use.forEach(text => {
 
         body += `
-            <p>${escapeHtml(text)}</p>
-        `;
+    <p>${createAutoLink(text)}</p>
+`;
 
     });
 
@@ -346,5 +346,22 @@ function createResourceLink(name){
             ${escapeHtml(name)}
         </span>
      `;
+
+}
+// --------------------
+// 自動リンク作成
+// --------------------
+
+function createAutoLink(text){
+
+    const exists = database.some(item => item.name === text);
+
+    if(exists){
+
+        return createResourceLink(text);
+
+    }
+
+    return escapeHtml(text);
 
 }
