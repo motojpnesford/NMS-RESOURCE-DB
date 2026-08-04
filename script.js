@@ -218,8 +218,8 @@ function showConvert(item){
     item.convert.forEach(text => {
 
         body += `
-    <p>${createConvertLink(text)}</p>
-`;
+            <p>${escapeHtml(text)}</p>
+        `;
 
     });
 
