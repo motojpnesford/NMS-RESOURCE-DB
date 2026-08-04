@@ -148,7 +148,7 @@ function showGuide(item){
         body += `
             <p>
                 <strong>${escapeHtml(step.step)} ${escapeHtml(step.title)}</strong><br>
-                ${createTextLinks(step.text)}
+                ${escapeHtml(step.text)}
             </p>
         `;
 
@@ -363,47 +363,5 @@ function createAutoLink(text){
     }
 
     return escapeHtml(text);
-
-}
-// --------------------
-// 文章内リンク化
-// --------------------
-
-function createTextLinks(text){
-
-    if(text == null){
-        return "";
-    }
-
-    let result = escapeHtml(text);
-
-    // 名前が長いものから処理
-    const names = database
-        .map(item => item.name)
-        .sort((a, b) => b.length - a.length);
-
-    names.forEach(name => {
-
-        const link = createResourceLink(name);
-
-        result = result.replaceAll(
-            escapeHtml(name),
-            `%%${escapeHtml(name)}%%`
-        );
-
-    });
-
-    names.forEach(name => {
-
-        const link = createResourceLink(name);
-
-        result = result.replaceAll(
-            `%%${escapeHtml(name)}%%`,
-            link
-        );
-
-    });
-
-    return result;
 
 }
